@@ -1,11 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "SARBIS - Smart AI Recertification of BARCLAYS IT Systems";
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Application Access List</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
@@ -26,6 +28,8 @@
     <div class="col-md-4">
       <!-- Users Card -->
       <div class="card mb-3">
+        <i class="fas fa-users" style="font-size: 1.5rem; color: #3e94db;"></i>
+        <br>
         <div class="card-header bg-info text-white">
           Users Assigned To Me
         </div>
@@ -47,8 +51,10 @@
       </div>
 
       <!-- Applications Card -->
-      <div class="card">
-        <div class="card-header bg-secondary text-white">
+      <div class="card mb-3">
+        <i class="fas fa-boxes" style="font-size: 1.5rem; color: #2ecc71;"></i>
+        <br>
+        <div class="card-header text-white" style="background-color: #2ecc71;">
           Applications
         </div>
         <div class="card-body">
@@ -68,6 +74,8 @@
     <!-- Right Column -->
     <div class="col-md-8">
       <div class="card">
+        <i class="fas fa-coins" style="font-size: 1.5rem; color: #1b4dd6;"></i>
+        <br>
         <div class="card-header bg-primary text-white">
           Pending Recertifications
         </div>
@@ -79,22 +87,28 @@
             </div>
             <button class="btn btn-success btn-sm">Save Progress</button>
           </div>
-          <table class="table table-bordered table-hover">
-            <thead class="table-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Application</th>
-                <th scope="col">User</th>
-                <th scope="col" class="text-center">Approve</th>
-                <th scope="col" class="text-center">Reject</th>
-                <th scope="col" class="text-center">AI Recommendation</th>
-              </tr>
+         <table class="table table-bordered table-hover" style="table-layout: auto; width: auto;">
+            <thead style="background-color: #1b4dd6; color: rgb(61, 120, 247);">
+                <tr>
+                    <th style="white-space: nowrap;">
+                        <input type="checkbox" itemid="selectAll" onclick="toggleSelectAll(this)">
+                    </th>
+                    <th style="white-space: nowrap;" scope="col">Application</th>
+                    <th style="white-space: nowrap;" scope="col">User</th>
+                    <th style="white-space: nowrap;" scope="col" class="text-center">Last Used</th>
+                    <th style="white-space: nowrap;" scope="col" class="text-center">Approve</th>
+                    <th style="white-space: nowrap;" scope="col" class="text-center">Reject</th>
+                    <th style="white-space: nowrap;" scope="col" class="text-center">
+                        <i class="fas fa-brain" style="font-size: 1.5rem; color: #f1c40f;"></i> SARBIS Recommendation
+                    </th>
+                </tr>
             </thead>
             <tbody>
               <tr>
                 <td><input type="checkbox"></td>
                 <td>CERTIFICATENOW</td>
                 <td>Anshuman Kumar (INTRANET\w0)</td>
+                <td></td>
                 <td class="text-center"><input type="radio" name="cert1"></td>
                 <td class="text-center"><input type="radio" name="cert1"></td>
                <td></td>
@@ -103,10 +117,11 @@
                 <td><input type="checkbox"></td>
                 <td>GILab PROD</td>
                 <td>Anshuman Kumar (INTRANET\w0)</td>
-                <td class="text-center"><input type="radio" name="cert2"></td>
-                <td class="text-center"><input type="radio" name="cert2"></td>
                 <td></td>
-              </tr>
+                <td class="text-center"><input type="radio" name="cert2"></td>
+                <td class="text-center"><input type="radio" name="cert2"></td>
+                <td></td>                
+              </tr>              
             </tbody>
           </table>
           <div class="alert alert-warning mt-3 small">

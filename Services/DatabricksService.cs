@@ -96,7 +96,7 @@ namespace HackathonProject.Services
 
         public async Task<List<recert_requests>> GetrequestsAsync()
         {
-            string sql = "SELECT timesheet_id, employee_id, date, hours_worked FROM your_schema.timesheet";
+            string sql = "SELECT timesheet_id, employee_id, date, hours_worked FROM your_schema.recert_requests";
             var json = await ExecuteQueryAsync(sql);
 
             dynamic result = JsonConvert.DeserializeObject(json);
