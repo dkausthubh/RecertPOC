@@ -11,7 +11,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-
 <div class="container py-4">
   <h2 class="mb-4 text-primary">Application Access List</h2>
 
@@ -28,15 +27,13 @@
     <div class="col-md-4">
       <!-- Users Card -->
       <div class="card mb-3">
-        <i class="fas fa-users" style="font-size: 1.5rem; color: #3e94db;"></i>
-        <br>
-        <div class="card-header bg-info text-white">
-          Users Assigned To Me
+        <div class="card-header bg-info text-white d-flex align-items-center">
+          <i class="fas fa-users me-2"></i> Users Assigned To Me
         </div>
         <div class="card-body">
           <input type="text" class="form-control mb-2" placeholder="Search Users...">
           <div class="form-check mb-2">
-            <input class="form-check-input" type="checkbox" id="selectAllUsers">
+            <input class="form-check-input" type="checkbox" id="selectAllUsers" >
             <label class="form-check-label" for="selectAllUsers">Select All Users</label>
           </div>
           <div class="list-group small">
@@ -52,10 +49,8 @@
 
       <!-- Applications Card -->
       <div class="card mb-3">
-        <i class="fas fa-boxes" style="font-size: 1.5rem; color: #2ecc71;"></i>
-        <br>
-        <div class="card-header text-white" style="background-color: #2ecc71;">
-          Applications
+        <div class="card-header text-white d-flex align-items-center" style="background-color: #2ecc71;">
+          <i class="fas fa-boxes me-2"></i> Applications
         </div>
         <div class="card-body">
           <input type="text" class="form-control mb-2" placeholder="Search Applications...">
@@ -74,56 +69,56 @@
     <!-- Right Column -->
     <div class="col-md-8">
       <div class="card">
-        <i class="fas fa-coins" style="font-size: 1.5rem; color: #1b4dd6;"></i>
-        <br>
-        <div class="card-header bg-primary text-white">
-          Pending Recertifications
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+          <i class="fas fa-coins me-2"></i> Pending Recertifications          
         </div>
         <div class="card-body">
-          <div class="d-flex justify-content-between mb-2">
-            <div>
-              <button class="btn btn-outline-secondary btn-sm me-2">Group by App Account</button>
-              <button class="btn btn-outline-secondary btn-sm">Group by App Profile</button>
-            </div>
-            <button class="btn btn-success btn-sm">Save Progress</button>
+          <div class="d-flex justify-content-start mb-2">
+            <button class="btn btn-outline-secondary btn-sm me-2">Group by App Account</button>
+            <button class="btn btn-outline-secondary btn-sm">Group by App Profile</button>
+            <button class="btn btn-success btn-sm ms-auto">Save Progress</button>
           </div>
-         <table class="table table-bordered table-hover" style="table-layout: auto; width: auto;">
-            <thead style="background-color: #1b4dd6; color: rgb(61, 120, 247);">
+
+          <!-- Responsive wrapper -->
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle" style="width: 100%;">
+              <thead class="text-white" style="background-color: #1b4dd6;">
                 <tr>
-                    <th style="white-space: nowrap;">
-                        <input type="checkbox" itemid="selectAll" onclick="toggleSelectAll(this)">
-                    </th>
-                    <th style="white-space: nowrap;" scope="col">Application</th>
-                    <th style="white-space: nowrap;" scope="col">User</th>
-                    <th style="white-space: nowrap;" scope="col" class="text-center">Last Used</th>
-                    <th style="white-space: nowrap;" scope="col" class="text-center">Approve</th>
-                    <th style="white-space: nowrap;" scope="col" class="text-center">Reject</th>
-                    <th style="white-space: nowrap;" scope="col" class="text-center">
-                        <i class="fas fa-brain" style="font-size: 1.5rem; color: #f1c40f;"></i> SARBIS Recommendation
-                    </th>
+                  <th><input type="checkbox" onclick="toggleSelectAllRecords(this)"></th>
+                  <th>Application</th>
+                  <th>User</th>
+                  <th class="text-center">Last Used</th>
+                  <th class="text-center">Approve</th>
+                  <th class="text-center">Reject</th>
+                  <th class="text-center"><i class="fas fa-brain" style="color: #f1c40f;"></i><br>SARBIS Recommendation</th>
+                  <th class="text-center">Get SARBIS Recommendation</th>
                 </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>CERTIFICATENOW</td>
-                <td>Anshuman Kumar (INTRANET\w0)</td>
-                <td></td>
-                <td class="text-center"><input type="radio" name="cert1"></td>
-                <td class="text-center"><input type="radio" name="cert1"></td>
-               <td></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>GILab PROD</td>
-                <td>Anshuman Kumar (INTRANET\w0)</td>
-                <td></td>
-                <td class="text-center"><input type="radio" name="cert2"></td>
-                <td class="text-center"><input type="radio" name="cert2"></td>
-                <td></td>                
-              </tr>              
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>CERTIFICATENOW</td>
+                  <td>Anshuman Kumar (INTRANET\w0)</td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><input type="radio" name="cert1"></td>
+                  <td class="text-center"><input type="radio" name="cert1"></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><button class="btn btn-sm btn-outline-primary">Get AI Recommendation</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td>GILab PROD</td>
+                  <td>Anshuman Kumar (INTRANET\w0)</td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><input type="radio" name="cert2"></td>
+                  <td class="text-center"><input type="radio" name="cert2"></td>
+                  <td class="text-center"></td>
+                  <td class="text-center"><button class="btn btn-sm btn-outline-primary">Get AI Recommendation</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="alert alert-warning mt-3 small">
             Note: Saved actions must still be submitted to complete your recertification.
           </div>
@@ -133,7 +128,20 @@
     </div>
   </div>
 </div>
+<script>
+  // For "Select All Users"
+  document.getElementById('selectAllUsers').addEventListener('change', function() {
+    const userCheckboxes = document.querySelectorAll('.list-group-item input[type="checkbox"]');
+    userCheckboxes.forEach(cb => cb.checked = this.checked);
+  });
 
+  // For "Select All Records" in the table
+  function toggleSelectAllRecords(source) {
+    const table = source.closest('table');
+    const checkboxes = table.querySelectorAll('tbody input[type="checkbox"]');
+    checkboxes.forEach(cb => cb.checked = source.checked);
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
